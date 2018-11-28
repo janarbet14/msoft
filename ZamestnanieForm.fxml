@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minWidth="315.0" prefHeight="700.0"
+	prefWidth="500.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="view.ZamestnanieForm">
+	<children>
+		<Button fx:id="buttonVyhladajZam" layoutX="15.0" layoutY="15.0"
+			prefWidth="-1.0" text="Vyhľadaj používateľa" VBox.vgrow="SOMETIMES" />
+		<Text fx:id="textVyhladajInfo" text="" layoutX="150.0"
+			layoutY="40" />
+		<Separator layoutX="15.0" layoutY="55.0" prefWidth="470.0" />
+
+		<Label fx:id="labelMeno" layoutX="15" layoutY="70" text="Meno"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldMeno" layoutX="150" layoutY="70" />
+
+		<Label fx:id="labelPriezvisko" layoutX="15" layoutY="100"
+			text="Priezvisko" style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldPriezvisko" layoutX="150"
+			layoutY="100" />
+
+		<Label fx:id="labelDatumNar" layoutX="15" layoutY="130"
+			text="Dátum narodenia" style="-fx-font: normal bold 15px 'serif' " />
+		<DatePicker fx:id="datePickerDatumNar" layoutX="150"
+			layoutY="130" />
+
+		<Label fx:id="labelPohlavie" layoutX="15" layoutY="160"
+			text="Pohlavie" style="-fx-font: normal bold 15px 'serif' " />
+		<VBox layoutX="150" layoutY="160">
+			<fx:define>
+				<ToggleGroup fx:id="toggleGroupPohlavie" />
+			</fx:define>
+			<children>
+				<RadioButton fx:id="radioButtonMuz" text="muž"
+					toggleGroup="$toggleGroupPohlavie" />
+				<RadioButton fx:id="radioButtonZena" text="žena"
+					toggleGroup="$toggleGroupPohlavie" />
+			</children>
+		</VBox>
+
+		<Separator layoutX="15.0" layoutY="210.0" prefWidth="470.0" />
+		<Label fx:id="labelAdresa" layoutX="15" layoutY="225"
+			text="Adresa" style="-fx-font: normal bold 15px 'serif' " />
+			
+		<Label fx:id="labelUlica" layoutX="15" layoutY="255" text="Ulica"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldUlica" layoutX="150" layoutY="255" minWidth="230"/>
+		<Label fx:id="labelUlicaCislo" layoutX="385" layoutY="255" text="pop. č."
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldUlicaCislo" maxWidth="50" layoutX="435" layoutY="255" />
+		
+		<Label fx:id="labelMesto" layoutX="15" layoutY="285" text="Mesto"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldMesto" layoutX="150" layoutY="285" minWidth="200"/>
+		<Label fx:id="labelPSC" layoutX="365" layoutY="285" text="PSČ"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldPSC" maxWidth="80" layoutX="405" layoutY="285" />
+		
+		<Label fx:id="labelStat" layoutX="15" layoutY="315" text="Štát"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<ComboBox fx:id="statComboBox" layoutX="150" layoutY="315">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Slovenská republika" />
+              <String fx:value="Česká republika" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        
+        <Separator layoutX="15.0" layoutY="355.0" prefWidth="470.0" />
+		<Label fx:id="labelKontakt" layoutX="15" layoutY="370"
+			text="Kontaktné údaje" style="-fx-font: normal bold 15px 'serif' " />
+			
+		<Label fx:id="labelTelefon" layoutX="15" layoutY="400" text="Telefón"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldTelefon" maxWidth="150" layoutX="150" layoutY="400" />
+		
+		<Label fx:id="labelEmail" layoutX="15" layoutY="430" text="E-mail"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldEmail" maxWidth="150" layoutX="150" layoutY="430" />
+		
+		<Separator layoutX="15.0" layoutY="475.0" prefWidth="470.0" />
+		<Label fx:id="labelBankSpojenie" layoutX="15" layoutY="490"
+			text="Bankové spojenie" style="-fx-font: normal bold 15px 'serif' " />
+		
+		<Label fx:id="labelIBAN" layoutX="15" layoutY="520" text="IBAN"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldIBAN" minWidth="335" layoutX="150" layoutY="520" />
+		
+		<Label fx:id="labelBanka" layoutX="15" layoutY="550" text="Banka"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<ComboBox fx:id="bankaComboBox" layoutX="150" layoutY="550">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="0900" />
+              <String fx:value="0720" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label fx:id="labelCisloUctu" layoutX="230" layoutY="550" text="č. účtu"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textFieldCisloUctu" minWidth="205" layoutX="280" layoutY="550" />
+
+	</children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minWidth="300.0" prefHeight="200.0"
+	prefWidth="500.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="view.VyhladavanieForm">
+	<children>
+		<Label fx:id="label1" layoutX="15" layoutY="15" text="Podľa"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<ComboBox fx:id="typComboBox" layoutX="150" layoutY="15">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="ID" />
+              <String fx:value="Rodné číslo" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        
+        <Label fx:id="label2" layoutX="15" layoutY="45" text="ID"
+			style="-fx-font: normal bold 15px 'serif' " />
+		<TextField fx:id="textField1" maxWidth="80" layoutX="150" layoutY="45" />
+        
+		<Button fx:id="buttonVyhladajPouz" layoutX="335.0" layoutY="165.0"
+			prefWidth="150.0" text="Vyhľadaj" />
+
+	</children>
+</AnchorPane>
